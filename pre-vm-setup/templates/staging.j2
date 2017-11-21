@@ -1,0 +1,13 @@
+{%for _entry in user_entry %}
+- hostname: "{{ _entry.hostname }}"
+  ansible_host: "{{ _entry.ip }}"
+{% if _entry.app == 'all' %}
+  app_list: "{{ approved_app_list }}"
+{% else %}
+  app_list:
+    - "{{ _entry.app }}"
+  groups: deploy_vms
+{% endif %}
+  ansible_port: {{ _entry.ansible_port }}
+  groups: deploy_vms
+{%endfor%}

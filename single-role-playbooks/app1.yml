@@ -1,0 +1,4 @@
+---
+- hosts: app1_hosts
+  roles:
+    - role: app1

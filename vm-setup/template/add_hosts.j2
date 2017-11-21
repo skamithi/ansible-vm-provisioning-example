@@ -1,0 +1,5 @@
+{% for _entry in modified_user_entry %}
+{% for key,value in _entry.iteritems() %}
+{{key}}: '{{value}}'
+{% endfor %}
+{% endfor %}

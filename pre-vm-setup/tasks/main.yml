@@ -1,0 +1,4 @@
+---
+- name: transform user_entry info with extra bits
+  set_fact:
+    modified_user_entry: "{{lookup('template', 'staging.j2') | from_yaml }}"

@@ -1,0 +1,13 @@
+user_entry:
+  - hostname: "ts003"
+    ip: "localhost"
+    ansible_port: "9003"
+    app: "all"
+
+  - hostname: "ts002"
+    ip: "localhost"
+    ansible_port: "9002"
+    app: "app1"
+
+
+

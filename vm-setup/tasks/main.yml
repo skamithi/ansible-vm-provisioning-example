@@ -1,0 +1,10 @@
+---
+- debug: msg="create VM"
+
+- debug: msg="attributes used {{ item }}"
+  with_items: "{{ modified_user_entry }}"
+
+- name: Add hosts to the inventory creating the VMs
+  add_host:
+  args: "{{ item }}"
+  with_items: "{{ modified_user_entry }}"

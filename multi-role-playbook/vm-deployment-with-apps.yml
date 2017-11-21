@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - role: pre-vm-setup
+      tags: pre-vm-setup
+    - role: vm-setup
+      tags: vm-setup
+
+- hosts: deploy_vms
+  roles:
+    - role: vm-status
+      tags: vm-status
+    - role: app1
+      when: "'app1' in app_list"
+      tags: app1, apps
+    - role: app2
+      when: "'app2' in app_list"
+      tags: app2, apps
+    - role: app3
+      when: "'app3' in app_list"
+      tags: app3, apps
+
+
