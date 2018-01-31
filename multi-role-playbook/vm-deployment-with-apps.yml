@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: no
   roles:
     - role: pre-vm-setup
       tags: pre-vm-setup
@@ -8,6 +9,7 @@
       tags: vm-setup
 
 - hosts: deploy_vms
+  connection: local
   roles:
     - role: vm-status
       tags: vm-status
