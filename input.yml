@@ -8,6 +8,3 @@ user_entry:
     ip: "localhost"
     ansible_port: "9002"
     app: "app1"
-
-
-
